@@ -28,6 +28,8 @@ print(valid_parentheses("()[]{}"))
 # If there is no future day for which this is possible, keep answer[i] == 0 instead.
 
 def daily_temp(temperatures):
+    #Time complexity: O(n)
+    #Space complexity: O(n)
     stack = []
     res = [0]*len(temperatures)
 
