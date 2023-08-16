@@ -4,6 +4,8 @@
 # Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
 
 def buy_sell(prices):
+    #Time Complexity: O(n)
+    #Space Complexity: O(1)
     left = 0
     right = 1
     profit = 0
