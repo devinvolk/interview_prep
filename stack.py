@@ -21,3 +21,21 @@ def valid_parentheses(s):
     return not stack
 
 print(valid_parentheses("()[]{}"))
+
+# 739. Daily Temperatures
+# Given an array of integers temperatures represents the daily temperatures, 
+# return an array answer such that answer[i] is the number of days you have to wait after the ith day to get a warmer temperature. 
+# If there is no future day for which this is possible, keep answer[i] == 0 instead.
+
+def daily_temp(temperatures):
+    stack = []
+    res = [0]*len(temperatures)
+
+    for i in range(len(temperatures)):
+        while stack and temperatures[i] > temperatures[stack[-1]]:
+            j = stack.pop()
+            res[j] = i - j
+        stack.append(i)
+    return res
+
+print(daily_temp([73,74,75,71,69,72,76,73]))
