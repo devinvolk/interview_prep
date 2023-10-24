@@ -21,3 +21,21 @@ def buy_sell(prices):
     return profit
 
 print(buy_sell([7,1,5,3,6,4]))
+
+# 3. Longest Substring Without Repeating Characters
+# Given a string s, find the length of the longest substring without repeating characters.
+
+def longest_no_repeat_substring(s):
+    test = set()
+    length = 0
+    l = 0
+
+    for r in range(len(s)):
+        while s[r] in test:
+            test.remove(s[l])
+            l += 1
+        test.add(s[r])
+        length = max(length, r - l + 1)
+    return length
+
+print(longest_no_repeat_substring("pwwkew"))
