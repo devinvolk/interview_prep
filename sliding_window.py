@@ -26,6 +26,9 @@ print(buy_sell([7,1,5,3,6,4]))
 # Given a string s, find the length of the longest substring without repeating characters.
 
 def longest_no_repeat_substring(s):
+    #Time Complexity: O(n)
+    #Space Complexity: O(n)
+    
     test = set()
     length = 0
     l = 0
