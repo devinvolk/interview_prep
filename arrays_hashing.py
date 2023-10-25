@@ -63,3 +63,27 @@ def two_sum(nums, target):
             hash[nums[i]] = i
 
 print(two_sum([2,7,11,15], 9))
+
+# 347. Top K Frequent Elements
+# Given an integer array nums and an integer k, return the k most frequent elements.
+# You may return the answer in any order.
+
+def k_freq(nums, k):
+    #Time Complexity: O(n)
+    #Space Complexity: O(n)
+
+    hash = {}
+    freq = [[] for i in range(len(nums) + 1)]
+    final = []
+
+    for i in nums:
+        hash[i] = 1 + hash.get(i, 0)
+    for x, y in hash.items():
+        freq[y].append(x)
+    
+    for j in range(len(freq) - 1, 0, -1):
+        for n in freq[j]:
+            final.append(n)
+            if len(final) == k:
+                return final
+print(k_freq([1,1,1,2,2,3], 2))
